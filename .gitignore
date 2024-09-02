@@ -11,3 +11,6 @@
 *.dSYM
 .DS_Store
 .vscode
+compile_commands.json
+tags
+.cache/
