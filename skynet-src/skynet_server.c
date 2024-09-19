@@ -136,7 +136,8 @@ skynet_context_new(const char * name, const char *param) {
 
 	ctx->mod = mod;
 	ctx->instance = inst;
-	ATOM_INIT(&ctx->ref , 2);
+    // ref是哪两个引用呢？一个是skynet_handle_register(ctx)返回的引用，另一个是skynet_context_release(ctx)返回的引用
+	ATOM_INIT(&ctx->ref , 2); 
 	ctx->cb = NULL;
 	ctx->cb_ud = NULL;
 	ctx->session_id = 0;

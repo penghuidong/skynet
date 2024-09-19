@@ -117,7 +117,7 @@ skynet_module_query(const char * name) {
 			M->m[index].module = dl;
 
 			if (open_sym(&M->m[index]) == 0) {
-				M->m[index].name = skynet_strdup(name);
+				M->m[index].name = skynet_strdup(name);//这里在深拷贝一份name，是为了避免外层name内存被释放
 				M->count ++;
 				result = &M->m[index];
 			}
