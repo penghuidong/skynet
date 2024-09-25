@@ -135,6 +135,7 @@ skynet_handle_retireall() {
 	}
 }
 
+// 从handle_storage中获取handle对应的skynet_context
 struct skynet_context * 
 skynet_handle_grab(uint32_t handle) {
 	struct handle_storage *s = H;

@@ -136,7 +136,8 @@ skynet_context_new(const char * name, const char *param) {
 
 	ctx->mod = mod;
 	ctx->instance = inst;
-    // ref是哪两个引用呢？一个是skynet_handle_register(ctx)返回的引用，另一个是skynet_context_release(ctx)返回的引用
+    // 引用为2：一个是这里创建时的引用，另一个是注册到storage slots后的引用
+    // 第一个引用创建后释放，第二个引用在节点终止时释放
 	ATOM_INIT(&ctx->ref , 2); 
 	ctx->cb = NULL;
 	ctx->cb_ud = NULL;
