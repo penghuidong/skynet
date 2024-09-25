@@ -24,9 +24,10 @@ struct handle_storage {
 	int slot_size;
 	struct skynet_context ** slot;
 	
+    // 方便上层逻辑通过name查找handle
 	int name_cap;
 	int name_count;
-	struct handle_name *name;
+	struct handle_name *name; // 按字符升序排列， 二分查找提高效率
 };
 
 static struct handle_storage *H = NULL;
